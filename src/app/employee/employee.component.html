@@ -1,0 +1,60 @@
+<div class="wrapper">
+    <h3>Register Form</h3>
+    <div class="" >
+    </div>
+      <div class = "set1">
+        <form #userForm = "ngForm" (ngSubmit) = "onSubmit(userForm)">
+    
+          <div class="form-group">
+            
+            <input type="hidden" class="form-control" name="id" #id = "ngModel" [(ngModel)] = "employeeService.selectedEmployee.id">
+          </div>
+    
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" required 
+             class="form-control" name="name" #name = "ngModel" [(ngModel)] = "employeeService.selectedEmployee.name">
+          </div>
+          
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" required
+             class="form-control" name="email" #name = "ngModel" [(ngModel)] = "employeeService.selectedEmployee.email">
+          </div>
+
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="number" required 
+             class="form-control" name="phone_num" #name = "ngModel" [(ngModel)] = "employeeService.selectedEmployee.phone_num">
+          </div>
+         
+          <button  class="btn" type="submit"  [disabled]="!userForm.valid" >Submit</button>
+          <button  class="btn" type="button"(click)="resetForm(userForm)">Reset</button>
+        </form>
+      </div><!--set1-->
+      <div class="set2">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr> 
+            </thead>
+            <tr *ngFor = "let emp of employeeService.employees">
+                <td>{{emp.name}}</td>
+                <td>{{emp.email}}</td>
+                <td>{{emp.phone_num}}</td>
+                <td><a class="action btn" (click) = "onEdit(emp)">
+                    <i class="material-icons">edit</i>
+                </a></td>
+                <td><a class="action btn" (click) = "onDelete(emp.id,userForm)">
+                    <i class="material-icons">delete</i>
+                </a></td>
+
+            </tr>
+        </table>
+      </div>
+    </div>
