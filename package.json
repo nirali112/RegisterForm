@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "name": "angularproject",
   "version": "0.0.0",
   "scripts": {
@@ -43,7 +42,7 @@
     "tslint": "~6.1.0",
     "typescript": "~4.1.2"
   }
-=======
+
   "name": "nodejs",
   "version": "1.0.0",
   "description": "",
@@ -62,5 +61,5 @@
   "keywords": [],
   "author": "",
   "license": "ISC"
->>>>>>> b960a68 (functions  commit)
+
 }
